@@ -3,16 +3,36 @@ document.addEventListener("DOMContentLoaded", () => {
     const WHATSAPP_NUMBER = "5521987053760";
 
     const form = document.getElementById("reviewForm");
-    const ratingInput = document.getElementById("rating");
-    const ratingText = document.getElementById("ratingText");
-    const serviceRatingInput = document.getElementById("serviceRatingValue");
-    const recommendationInput = document.getElementById("recommendationValue");
-    const messageInput = document.getElementById("message");
-    const nameInput = document.getElementById("name");
-    const serviceInput = document.getElementById("service");
-    const counter = document.getElementById("counter");
-    const errorMessage = document.getElementById("errorMessage");
-    const successMessage = document.getElementById("successMessage");
+
+    const ratingInput =
+        document.getElementById("rating");
+
+    const ratingText =
+        document.getElementById("ratingText");
+
+    const serviceRatingInput =
+        document.getElementById("serviceRatingValue");
+
+    const recommendationInput =
+        document.getElementById("recommendationValue");
+
+    const messageInput =
+        document.getElementById("message");
+
+    const nameInput =
+        document.getElementById("name");
+
+    const serviceInput =
+        document.getElementById("service");
+
+    const counter =
+        document.getElementById("counter");
+
+    const errorMessage =
+        document.getElementById("errorMessage");
+
+    const successMessage =
+        document.getElementById("successMessage");
 
 
 
@@ -20,22 +40,32 @@ document.addEventListener("DOMContentLoaded", () => {
        NOTA GERAL
     ========================================= */
 
-    const stars = document.querySelectorAll(".star");
+    const stars =
+        document.querySelectorAll(".star");
+
 
     const ratingLabels = {
+
         1: "Muito ruim",
+
         2: "Ruim",
+
         3: "Regular",
+
         4: "Muito bom",
+
         5: "Excelente"
+
     };
+
 
 
     function updateMainStars(value) {
 
         stars.forEach((star) => {
 
-            const starValue = Number(star.dataset.rating);
+            const starValue =
+                Number(star.dataset.rating);
 
             star.classList.toggle(
                 "active",
@@ -44,18 +74,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
         });
 
+
         ratingText.textContent =
             value > 0
                 ? `${value} de 5 — ${ratingLabels[value]}`
                 : "Toque nas estrelas para avaliar";
+
     }
+
 
 
     stars.forEach((star) => {
 
         star.addEventListener("click", () => {
 
-            const value = Number(star.dataset.rating);
+            const value =
+                Number(star.dataset.rating);
 
             ratingInput.value = value;
 
@@ -82,13 +116,18 @@ document.addEventListener("DOMContentLoaded", () => {
         button.addEventListener("click", () => {
 
             serviceButtons.forEach((item) => {
+
                 item.classList.remove("selected");
+
             });
+
 
             button.classList.add("selected");
 
+
             serviceRatingInput.value =
                 button.dataset.value;
+
 
             clearError();
 
@@ -103,30 +142,51 @@ document.addEventListener("DOMContentLoaded", () => {
     ========================================= */
 
     const criteriaNames = {
+
         atendimento: "Atendimento",
+
         qualidade: "Qualidade do serviço",
+
         prazo: "Prazo de entrega",
+
         custo: "Custo-benefício",
+
         organizacao: "Organização"
+
     };
+
 
 
     const criteriaValues = {
+
         atendimento: 0,
+
         qualidade: 0,
+
         prazo: 0,
+
         custo: 0,
+
         organizacao: 0
+
     };
+
 
 
     const criteriaLabels = {
+
         1: "Muito ruim",
+
         2: "Ruim",
+
         3: "Regular",
+
         4: "Muito bom",
+
         5: "Excelente"
+
     };
+
 
 
     const criteriaGroups =
@@ -138,13 +198,16 @@ document.addEventListener("DOMContentLoaded", () => {
         const criteria =
             group.dataset.criteria;
 
+
         const buttons =
             group.querySelectorAll("button");
+
 
         const text =
             document.getElementById(
                 `criteria-${criteria}-text`
             );
+
 
 
         buttons.forEach((button) => {
@@ -154,13 +217,17 @@ document.addEventListener("DOMContentLoaded", () => {
                 const value =
                     Number(button.dataset.value);
 
-                criteriaValues[criteria] = value;
+
+                criteriaValues[criteria] =
+                    value;
+
 
 
                 buttons.forEach((item) => {
 
                     const itemValue =
                         Number(item.dataset.value);
+
 
                     item.classList.toggle(
                         "active",
@@ -170,8 +237,10 @@ document.addEventListener("DOMContentLoaded", () => {
                 });
 
 
+
                 text.textContent =
                     criteriaLabels[value];
+
 
                 clearError();
 
@@ -188,7 +257,9 @@ document.addEventListener("DOMContentLoaded", () => {
     ========================================= */
 
     const recommendationButtons =
-        document.querySelectorAll(".recommend-button");
+        document.querySelectorAll(
+            ".recommend-button"
+        );
 
 
     recommendationButtons.forEach((button) => {
@@ -196,13 +267,18 @@ document.addEventListener("DOMContentLoaded", () => {
         button.addEventListener("click", () => {
 
             recommendationButtons.forEach((item) => {
+
                 item.classList.remove("selected");
+
             });
+
 
             button.classList.add("selected");
 
+
             recommendationInput.value =
                 button.dataset.value;
+
 
             clearError();
 
@@ -216,12 +292,15 @@ document.addEventListener("DOMContentLoaded", () => {
        CONTADOR DO COMENTÁRIO
     ========================================= */
 
-    messageInput.addEventListener("input", () => {
+    messageInput.addEventListener(
+        "input",
+        () => {
 
-        counter.textContent =
-            messageInput.value.length;
+            counter.textContent =
+                messageInput.value.length;
 
-    });
+        }
+    );
 
 
 
@@ -231,14 +310,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function showError(message) {
 
-        errorMessage.textContent = message;
+        errorMessage.textContent =
+            message;
+
 
         errorMessage.scrollIntoView({
+
             behavior: "smooth",
+
             block: "center"
+
         });
 
     }
+
 
 
     function clearError() {
@@ -250,19 +335,41 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* =========================================
-       ESTRELAS EM TEXTO
+       ESTRELAS PARA O WHATSAPP
     ========================================= */
 
     function starsText(value) {
 
-        const number = Number(value);
+        const number =
+            Number(value);
+
 
         if (!number) {
-            return "Não informado";
+
+            return "Nao informado";
+
         }
 
-        return "⭐".repeat(number) +
-            "☆".repeat(5 - number);
+
+        /*
+         * Unicode das estrelas.
+         *
+         * ⭐ = U+2B50
+         * ☆ = U+2606
+         */
+
+        const filledStar =
+            "\u2B50";
+
+
+        const emptyStar =
+            "\u2606";
+
+
+        return (
+            filledStar.repeat(number) +
+            emptyStar.repeat(5 - number)
+        );
 
     }
 
@@ -272,188 +379,286 @@ document.addEventListener("DOMContentLoaded", () => {
        ENVIO DA AVALIAÇÃO
     ========================================= */
 
-    form.addEventListener("submit", (event) => {
+    form.addEventListener(
+        "submit",
+        (event) => {
 
-        event.preventDefault();
+            event.preventDefault();
 
-        clearError();
-
-
-        const rating =
-            Number(ratingInput.value);
-
-        const serviceRating =
-            serviceRatingInput.value.trim();
-
-        const service =
-            serviceInput.value.trim();
-
-        const message =
-            messageInput.value.trim();
-
-        const name =
-            nameInput.value.trim();
-
-        const recommendation =
-            recommendationInput.value.trim();
+            clearError();
 
 
 
-        /* =====================================
-           VALIDAÇÕES
-        ===================================== */
+            /* =================================
+               PEGAR OS DADOS
+            ================================= */
 
-        if (rating < 1 || rating > 5) {
-
-            showError(
-                "Por favor, selecione uma nota geral."
-            );
-
-            return;
-
-        }
+            const rating =
+                Number(ratingInput.value);
 
 
-        if (!serviceRating) {
-
-            showError(
-                "Por favor, avalie nosso atendimento."
-            );
-
-            return;
-
-        }
+            const serviceRating =
+                serviceRatingInput.value.trim();
 
 
-        if (!service) {
-
-            showError(
-                "Por favor, selecione o serviço realizado."
-            );
-
-            serviceInput.focus();
-
-            return;
-
-        }
+            const service =
+                serviceInput.value.trim();
 
 
-        for (const key in criteriaValues) {
+            const message =
+                messageInput.value.trim();
 
-            if (criteriaValues[key] < 1) {
+
+            const name =
+                nameInput.value.trim();
+
+
+            const recommendation =
+                recommendationInput.value.trim();
+
+
+
+            /* =================================
+               VALIDAÇÃO — NOTA GERAL
+            ================================= */
+
+            if (
+                rating < 1 ||
+                rating > 5
+            ) {
 
                 showError(
-                    `Por favor, avalie o critério "${criteriaNames[key]}".`
+                    "Por favor, selecione uma nota geral."
                 );
 
                 return;
 
             }
 
-        }
 
 
-        if (!recommendation) {
+            /* =================================
+               VALIDAÇÃO — ATENDIMENTO
+            ================================= */
 
-            showError(
-                "Por favor, informe se você recomendaria a DG Moura Cell."
-            );
+            if (!serviceRating) {
 
-            return;
+                showError(
+                    "Por favor, avalie nosso atendimento."
+                );
 
-        }
+                return;
 
-
-        if (!message) {
-
-            showError(
-                "Por favor, escreva um comentário sobre sua experiência."
-            );
-
-            messageInput.focus();
-
-            return;
-
-        }
+            }
 
 
 
-        /* =====================================
-           NOME
-        ===================================== */
+            /* =================================
+               VALIDAÇÃO — SERVIÇO
+            ================================= */
 
-        const clientName =
-            name || "Não informado";
+            if (!service) {
+
+                showError(
+                    "Por favor, selecione o serviço realizado."
+                );
+
+
+                serviceInput.focus();
+
+
+                return;
+
+            }
 
 
 
-        /* =====================================
-           MENSAGEM WHATSAPP
-        ===================================== */
+            /* =================================
+               VALIDAÇÃO — CRITÉRIOS
+            ================================= */
 
-        const whatsappMessage =
+            for (
+                const key in criteriaValues
+            ) {
 
-`⭐ NOVA AVALIAÇÃO — DG MOURA CELL
+                if (
+                    criteriaValues[key] < 1
+                ) {
+
+                    showError(
+                        `Por favor, avalie o critério "${criteriaNames[key]}".`
+                    );
+
+
+                    return;
+
+                }
+
+            }
+
+
+
+            /* =================================
+               VALIDAÇÃO — RECOMENDAÇÃO
+            ================================= */
+
+            if (!recommendation) {
+
+                showError(
+                    "Por favor, informe se você recomendaria a DG Moura Cell."
+                );
+
+
+                return;
+
+            }
+
+
+
+            /* =================================
+               VALIDAÇÃO — COMENTÁRIO
+            ================================= */
+
+            if (!message) {
+
+                showError(
+                    "Por favor, escreva um comentário sobre sua experiência."
+                );
+
+
+                messageInput.focus();
+
+
+                return;
+
+            }
+
+
+
+            /* =================================
+               NOME
+            ================================= */
+
+            const clientName =
+                name || "Nao informado";
+
+
+
+            /* =================================
+               EMOJIS EM UNICODE
+            ================================= */
+
+            const emojiStar =
+                "\u2B50";
+
+            const emojiPerson =
+                "\uD83D\uDC64";
+
+            const emojiTool =
+                "\uD83D\uDD27";
+
+            const emojiChart =
+                "\uD83D\uDCCA";
+
+            const emojiHandshake =
+                "\uD83E\uDD1D";
+
+            const emojiComment =
+                "\uD83D\uDCAC";
+
+            const emojiHeart =
+                "\u2764\uFE0F";
+
+            const emojiMegaphone =
+                "\uD83D\uDCE2";
+
+            const emojiPhone =
+                "\uD83D\uDCF1";
+
+
+
+            /* =================================
+               MENSAGEM WHATSAPP
+            ================================= */
+
+            const whatsappMessage =
+
+`${emojiStar} NOVA AVALIACAO — DG MOURA CELL
 
 ${starsText(rating)} ${rating}/5 — ${ratingLabels[rating].toUpperCase()}
 
-👤 Cliente: ${clientName}
-🔧 Serviço: ${service}
+${emojiPerson} Cliente: ${clientName}
+${emojiTool} Servico: ${service}
 
-📊 AVALIAÇÃO DOS CRITÉRIOS
+${emojiChart} AVALIACAO DOS CRITERIOS
 
 Atendimento: ${starsText(criteriaValues.atendimento)}
-Qualidade: ${starsText(criteriaValues.qualidade)}
-Prazo: ${starsText(criteriaValues.prazo)}
-Custo-benefício: ${starsText(criteriaValues.custo)}
-Organização: ${starsText(criteriaValues.organizacao)}
+Qualidade do servico: ${starsText(criteriaValues.qualidade)}
+Prazo de entrega: ${starsText(criteriaValues.prazo)}
+Custo-beneficio: ${starsText(criteriaValues.custo)}
+Organizacao: ${starsText(criteriaValues.organizacao)}
 
-🤝 AVALIAÇÃO DO ATENDIMENTO
+${emojiHandshake} AVALIACAO DO ATENDIMENTO
 
 ${serviceRating}
 
-❤️ O QUE MAIS GOSTOU / O QUE PODEMOS MELHORAR
+${emojiComment} O QUE MAIS GOSTOU / O QUE PODEMOS MELHORAR
 
 "${message}"
 
-📢 RECOMENDARIA A DG MOURA CELL?
+${emojiHeart} RECOMENDARIA A DG MOURA CELL?
 
 ${recommendation.toUpperCase()}
 
-📱 Avaliação enviada pelo QR Code da loja.`;
+${emojiPhone} Avaliacao enviada pelo QR Code da loja.`;
 
 
 
-        /* =====================================
-           ABRIR WHATSAPP
-        ===================================== */
+            /* =================================
+               LINK DO WHATSAPP
+            ================================= */
 
-        const whatsappURL =
-            `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
-                whatsappMessage
-            )}`;
+            const whatsappURL =
 
-
-        window.open(
-            whatsappURL,
-            "_blank"
-        );
+                `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
+                    whatsappMessage
+                )}`;
 
 
 
-        /* =====================================
-           TELA DE SUCESSO
-        ===================================== */
+            /* =================================
+               ABRIR WHATSAPP
+            ================================= */
 
-        form.style.display = "none";
+            window.open(
+                whatsappURL,
+                "_blank"
+            );
 
-        successMessage.classList.add("show");
 
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth"
-        });
 
-    });
+            /* =================================
+               TELA DE SUCESSO
+            ================================= */
+
+            form.style.display =
+                "none";
+
+
+            successMessage.classList.add(
+                "show"
+            );
+
+
+            window.scrollTo({
+
+                top: 0,
+
+                behavior: "smooth"
+
+            });
+
+        }
+    );
 
 });
