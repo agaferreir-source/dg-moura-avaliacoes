@@ -1,57 +1,123 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#06152d">
-    <meta name="description" content="Avalie sua experiência com a DG Moura Cell.">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="theme-color"
+        content="#06152d"
+    >
+
+    <meta
+        name="description"
+        content="Avalie sua experiência com a DG Moura Cell."
+    >
+
     <title>Avalie a DG Moura Cell</title>
 
-    <link rel="stylesheet" href="style.css">
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
 </head>
+
 
 <body>
 
-    <main class="page">
+<main class="page">
 
-        <div class="background-grid"></div>
-        <div class="glow glow-blue"></div>
-        <div class="glow glow-gold"></div>
+    <!-- FUNDO -->
 
-        <section class="review-card">
+    <div class="background-grid"></div>
 
-            <div class="brand">
-                <img src="logo.png" alt="DG Moura Cell" class="logo">
+    <div class="glow glow-blue"></div>
+
+    <div class="glow glow-gold"></div>
+
+
+    <!-- CARD PRINCIPAL -->
+
+    <section class="review-card">
+
+
+        <!-- LOGO -->
+
+        <div class="brand">
+
+            <img
+                src="logo.png"
+                alt="DG Moura Cell"
+                class="logo"
+            >
+
+        </div>
+
+
+        <!-- CABEÇALHO -->
+
+        <div class="intro">
+
+            <div class="rating-badge">
+                ★
             </div>
 
-            <div class="intro">
+            <h1>
 
-                <div class="rating-badge">★</div>
+                Sua opinião
+                <br>
 
-                <h1>
-                    Como foi sua<br>
-                    <span>experiência?</span>
-                </h1>
+                <span>faz a diferença!</span>
 
-                <p>
-                    Sua opinião é muito importante para nós.
-                    Conte como foi seu atendimento na
-                    <strong>DG Moura Cell</strong>.
-                </p>
+            </h1>
 
-            </div>
+            <p>
 
-            <form id="reviewForm" novalidate>
+                Conte pra gente como foi sua experiência
+                com a <strong>DG Moura Cell</strong>.
 
-                <div class="rating-section">
+            </p>
 
-                    <label>Sua avaliação</label>
+        </div>
+
+
+
+        <!-- FORMULÁRIO -->
+
+        <form
+            id="reviewForm"
+            novalidate
+        >
+
+
+            <!-- ================================= -->
+            <!-- 01 — NOTA GERAL -->
+            <!-- ================================= -->
+
+            <div class="form-section">
+
+                <div class="section-number">
+                    01
+                </div>
+
+                <div class="section-content">
+
+                    <label class="section-title">
+
+                        Como você avalia sua experiência?
+
+                    </label>
 
                     <div
                         class="stars"
                         id="stars"
-                        aria-label="Escolha uma nota de 1 a 5 estrelas"
                     >
 
                         <button
@@ -59,39 +125,55 @@
                             class="star"
                             data-rating="1"
                             aria-label="1 estrela"
-                        >★</button>
+                        >
+                            ★
+                        </button>
 
                         <button
                             type="button"
                             class="star"
                             data-rating="2"
                             aria-label="2 estrelas"
-                        >★</button>
+                        >
+                            ★
+                        </button>
 
                         <button
                             type="button"
                             class="star"
                             data-rating="3"
                             aria-label="3 estrelas"
-                        >★</button>
+                        >
+                            ★
+                        </button>
 
                         <button
                             type="button"
                             class="star"
                             data-rating="4"
                             aria-label="4 estrelas"
-                        >★</button>
+                        >
+                            ★
+                        </button>
 
                         <button
                             type="button"
                             class="star"
                             data-rating="5"
                             aria-label="5 estrelas"
-                        >★</button>
+                        >
+                            ★
+                        </button>
 
                     </div>
 
-                    <input type="hidden" id="rating" value="0">
+
+                    <input
+                        type="hidden"
+                        id="rating"
+                        value="0"
+                    >
+
 
                     <p
                         class="rating-text"
@@ -102,28 +184,134 @@
 
                 </div>
 
+            </div>
 
-                <div class="field">
 
-                    <label for="name">
-                        Seu nome <span>(opcional)</span>
+
+            <!-- ================================= -->
+            <!-- 02 — ATENDIMENTO -->
+            <!-- ================================= -->
+
+            <div class="form-section">
+
+                <div class="section-number">
+                    02
+                </div>
+
+                <div class="section-content">
+
+                    <label class="section-title">
+
+                        Como você avalia nosso atendimento?
+
                     </label>
 
+
+                    <div
+                        class="choice-grid"
+                        id="serviceRating"
+                    >
+
+                        <button
+                            type="button"
+                            class="choice-button"
+                            data-value="Excelente"
+                        >
+
+                            <span>😍</span>
+
+                            Excelente
+
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="choice-button"
+                            data-value="Muito bom"
+                        >
+
+                            <span>😊</span>
+
+                            Muito bom
+
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="choice-button"
+                            data-value="Bom"
+                        >
+
+                            <span>🙂</span>
+
+                            Bom
+
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="choice-button"
+                            data-value="Regular"
+                        >
+
+                            <span>😐</span>
+
+                            Regular
+
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="choice-button"
+                            data-value="Ruim"
+                        >
+
+                            <span>😕</span>
+
+                            Ruim
+
+                        </button>
+
+                    </div>
+
+
                     <input
-                        id="name"
-                        type="text"
-                        maxlength="60"
-                        placeholder="Como podemos chamar você?"
+                        type="hidden"
+                        id="serviceRatingValue"
+                        value=""
                     >
 
                 </div>
 
+            </div>
 
-                <div class="field">
 
-                    <label for="service">
-                        Serviço realizado <span>(opcional)</span>
+
+            <!-- ================================= -->
+            <!-- 03 — SERVIÇO -->
+            <!-- ================================= -->
+
+            <div class="form-section">
+
+                <div class="section-number">
+                    03
+                </div>
+
+                <div class="section-content">
+
+                    <label
+                        class="section-title"
+                        for="service"
+                    >
+
+                        Qual serviço você realizou?
+
                     </label>
+
 
                     <select id="service">
 
@@ -159,98 +347,595 @@
 
                 </div>
 
+            </div>
 
-                <div class="field">
 
-                    <label for="message">
-                        Conte como foi sua experiência
+
+            <!-- ================================= -->
+            <!-- 04 — CRITÉRIOS -->
+            <!-- ================================= -->
+
+            <div class="form-section">
+
+                <div class="section-number">
+                    04
+                </div>
+
+                <div class="section-content">
+
+                    <label class="section-title">
+
+                        Avalie cada ponto
+
                     </label>
 
-                    <textarea
-                        id="message"
-                        maxlength="500"
-                        required
-                        placeholder="Escreva sua avaliação..."
-                    ></textarea>
 
-                    <div class="counter">
-                        <span id="counter">0</span>/500
+                    <!-- ATENDIMENTO -->
+
+                    <div class="criteria">
+
+                        <div class="criteria-header">
+
+                            <span>
+                                Atendimento
+                            </span>
+
+                            <span
+                                class="criteria-value"
+                                id="criteria-atendimento-text"
+                            >
+                                Selecione
+                            </span>
+
+                        </div>
+
+
+                        <div
+                            class="mini-stars"
+                            data-criteria="atendimento"
+                        >
+
+                            <button
+                                type="button"
+                                data-value="1"
+                            >★</button>
+
+                            <button
+                                type="button"
+                                data-value="2"
+                            >★</button>
+
+                            <button
+                                type="button"
+                                data-value="3"
+                            >★</button>
+
+                            <button
+                                type="button"
+                                data-value="4"
+                            >★</button>
+
+                            <button
+                                type="button"
+                                data-value="5"
+                            >★</button>
+
+                        </div>
+
                     </div>
 
-                </div>
 
 
-                <p
-                    class="error-message"
-                    id="errorMessage"
-                ></p>
+                    <!-- QUALIDADE -->
+
+                    <div class="criteria">
+
+                        <div class="criteria-header">
+
+                            <span>
+                                Qualidade do serviço
+                            </span>
+
+                            <span
+                                class="criteria-value"
+                                id="criteria-qualidade-text"
+                            >
+                                Selecione
+                            </span>
+
+                        </div>
 
 
-                <button
-                    type="submit"
-                    class="submit-button"
-                >
+                        <div
+                            class="mini-stars"
+                            data-criteria="qualidade"
+                        >
 
-                    <span>✓</span>
+                            <button
+                                type="button"
+                                data-value="1"
+                            >★</button>
 
-                    ENVIAR MINHA AVALIAÇÃO
+                            <button
+                                type="button"
+                                data-value="2"
+                            >★</button>
 
-                </button>
+                            <button
+                                type="button"
+                                data-value="3"
+                            >★</button>
+
+                            <button
+                                type="button"
+                                data-value="4"
+                            >★</button>
+
+                            <button
+                                type="button"
+                                data-value="5"
+                            >★</button>
+
+                        </div>
+
+                    </div>
 
 
-                <p class="privacy-text">
 
-                    Sua avaliação será preparada e encaminhada
-                    diretamente para o WhatsApp da DG Moura Cell.
+                    <!-- PRAZO -->
 
-                </p>
+                    <div class="criteria">
 
-            </form>
+                        <div class="criteria-header">
+
+                            <span>
+                                Prazo de entrega
+                            </span>
+
+                            <span
+                                class="criteria-value"
+                                id="criteria-prazo-text"
+                            >
+                                Selecione
+                            </span>
+
+                        </div>
 
 
-            <div
-                class="success-message"
-                id="successMessage"
-            >
+                        <div
+                            class="mini-stars"
+                            data-criteria="prazo"
+                        >
 
-                <div class="success-icon">
-                    ✓
-                </div>
+                            <button
+                                type="button"
+                                data-value="1"
+                            >★</button>
 
-                <h2>
-                    Avaliação preparada!
-                </h2>
+                            <button
+                                type="button"
+                                data-value="2"
+                            >★</button>
 
-                <p>
-                    Estamos abrindo o WhatsApp com sua avaliação
-                    pronta para enviar.
-                </p>
+                            <button
+                                type="button"
+                                data-value="3"
+                            >★</button>
 
-                <div class="success-brand">
-                    DG <span>MOURA CELL</span>
+                            <button
+                                type="button"
+                                data-value="4"
+                            >★</button>
+
+                            <button
+                                type="button"
+                                data-value="5"
+                            >★</button>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- CUSTO -->
+
+                    <div class="criteria">
+
+                        <div class="criteria-header">
+
+                            <span>
+                                Custo-benefício
+                            </span>
+
+                            <span
+                                class="criteria-value"
+                                id="criteria-custo-text"
+                            >
+                                Selecione
+                            </span>
+
+                        </div>
+
+
+                        <div
+                            class="mini-stars"
+                            data-criteria="custo"
+                        >
+
+                            <button
+                                type="button"
+                                data-value="1"
+                            >★</button>
+
+                            <button
+                                type="button"
+                                data-value="2"
+                            >★</button>
+
+                            <button
+                                type="button"
+                                data-value="3"
+                            >★</button>
+
+                            <button
+                                type="button"
+                                data-value="4"
+                            >★</button>
+
+                            <button
+                                type="button"
+                                data-value="5"
+                            >★</button>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- ORGANIZAÇÃO -->
+
+                    <div class="criteria">
+
+                        <div class="criteria-header">
+
+                            <span>
+                                Organização
+                            </span>
+
+                            <span
+                                class="criteria-value"
+                                id="criteria-organizacao-text"
+                            >
+                                Selecione
+                            </span>
+
+                        </div>
+
+
+                        <div
+                            class="mini-stars"
+                            data-criteria="organizacao"
+                        >
+
+                            <button
+                                type="button"
+                                data-value="1"
+                            >★</button>
+
+                            <button
+                                type="button"
+                                data-value="2"
+                            >★</button>
+
+                            <button
+                                type="button"
+                                data-value="3"
+                            >★</button>
+
+                            <button
+                                type="button"
+                                data-value="4"
+                            >★</button>
+
+                            <button
+                                type="button"
+                                data-value="5"
+                            >★</button>
+
+                        </div>
+
+                    </div>
+
+
                 </div>
 
             </div>
 
-        </section>
 
 
-        <footer>
+            <!-- ================================= -->
+            <!-- 05 — RECOMENDAÇÃO -->
+            <!-- ================================= -->
 
-            <strong>
-                DG MOURA CELL
-            </strong>
+            <div class="form-section">
 
-            <span>
-                Seu aparelho, nosso compromisso.
-            </span>
+                <div class="section-number">
+                    05
+                </div>
 
-        </footer>
+                <div class="section-content">
 
-    </main>
+                    <label class="section-title">
+
+                        Você recomendaria a DG Moura Cell?
+
+                    </label>
 
 
-    <script src="script.js"></script>
+                    <div
+                        class="recommendation"
+                        id="recommendation"
+                    >
+
+                        <button
+                            type="button"
+                            class="recommend-button"
+                            data-value="Sim, com certeza"
+                        >
+
+                            ❤️
+
+                            <span>
+                                Sim, com certeza
+                            </span>
+
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="recommend-button"
+                            data-value="Talvez"
+                        >
+
+                            🤔
+
+                            <span>
+                                Talvez
+                            </span>
+
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="recommend-button"
+                            data-value="Não"
+                        >
+
+                            😕 
+
+                            <span>
+                                Não
+                            </span>
+
+                        </button>
+
+                    </div>
+
+
+                    <input
+                        type="hidden"
+                        id="recommendationValue"
+                        value=""
+                    >
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ================================= -->
+            <!-- 06 — COMENTÁRIO -->
+            <!-- ================================= -->
+
+            <div class="form-section">
+
+                <div class="section-number">
+                    06
+                </div>
+
+                <div class="section-content">
+
+                    <label
+                        class="section-title"
+                        for="message"
+                    >
+
+                        Conte um pouco mais sobre sua experiência
+
+                    </label>
+
+
+                    <p class="section-description">
+
+                        O que você mais gostou?
+                        Tem algo que poderíamos melhorar?
+
+                    </p>
+
+
+                    <textarea
+                        id="message"
+                        maxlength="800"
+                        required
+                        placeholder="Escreva sua avaliação..."
+                    ></textarea>
+
+
+                    <div class="counter">
+
+                        <span id="counter">
+                            0
+                        </span>
+
+                        /800
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ================================= -->
+            <!-- 07 — NOME -->
+            <!-- ================================= -->
+
+            <div class="form-section">
+
+                <div class="section-number">
+                    07
+                </div>
+
+                <div class="section-content">
+
+                    <label
+                        class="section-title"
+                        for="name"
+                    >
+
+                        Como podemos chamar você?
+
+                        <span class="optional">
+                            opcional
+                        </span>
+
+                    </label>
+
+
+                    <input
+                        id="name"
+                        type="text"
+                        maxlength="60"
+                        placeholder="Seu nome"
+                    >
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ERROS -->
+
+            <p
+                class="error-message"
+                id="errorMessage"
+            ></p>
+
+
+
+            <!-- BOTÃO -->
+
+            <button
+                type="submit"
+                class="submit-button"
+            >
+
+                <span class="button-icon">
+                    ✓
+                </span>
+
+                ENVIAR MINHA AVALIAÇÃO
+
+            </button>
+
+
+            <p class="privacy-text">
+
+                Sua avaliação será encaminhada diretamente
+                para a DG Moura Cell.
+
+            </p>
+
+
+        </form>
+
+
+
+        <!-- ================================= -->
+        <!-- TELA DE SUCESSO -->
+        <!-- ================================= -->
+
+        <div
+            class="success-message"
+            id="successMessage"
+        >
+
+            <div class="success-icon">
+                ✓
+            </div>
+
+
+            <h2>
+                Obrigado pela sua avaliação!
+            </h2>
+
+
+            <p>
+
+                Sua opinião é muito importante para
+                a DG Moura Cell.
+
+            </p>
+
+
+            <div class="success-rating">
+                ⭐⭐⭐⭐⭐
+            </div>
+
+
+            <div class="success-brand">
+
+                DG
+                <span>
+                    MOURA CELL
+                </span>
+
+            </div>
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- RODAPÉ -->
+
+    <footer>
+
+        <strong>
+            DG MOURA CELL
+        </strong>
+
+        <span>
+            Seu aparelho, nosso compromisso.
+        </span>
+
+    </footer>
+
+
+</main>
+
+
+<script src="script.js"></script>
 
 </body>
+
 </html>
